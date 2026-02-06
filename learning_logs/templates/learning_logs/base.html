@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Logs</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'home' %}">Learning Logs</a>
+        </div>
+        <div>
+            <a href="#">Login</a>
+        </div>
+    </header>
+    <nav>
+        <a href="{% url 'assuntos' %}">Meus assuntos</a>
+    </nav>
+    <main>
+        {% block conteudo %}{% endblock %}
+    </main>
+    <footer>
+        <p>Site desenvolvido por Andre mahina 😊</p>
+        <p>Aprende e seje mais produtivo</p>
+    </footer>
+</body>
+</html>
