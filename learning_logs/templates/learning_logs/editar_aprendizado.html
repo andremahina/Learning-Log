@@ -1,0 +1,8 @@
+{% extends 'learning_logs/base.html' %}
+{% block conteudo %}
+    <form action="{% url 'editar_aprendizado' aprendizado.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">atualizar aprendizado</button>
+    </form>
+{% endblock %}

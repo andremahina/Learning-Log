@@ -4,10 +4,12 @@
         <a href="{% url 'assunto' assunto.id %}">{{ assunto }}</a>
     </h2>
     <p>Aprendizados: </p>
+    <a href="{% url 'novo_aprendizado' assunto.id %}">Adicionar novo aprendizado</a>
     <ul type="square" >
         {% for aprendizado in aprendizados %}
             <li>
                 <p>{{ aprendizado.data|date:'D M, Y H:i'}}</p>
+                <a href="{% url 'editar_aprendizado' aprendizado.id %}">editar aprendizado</a>
                 <p style="text-align: justify;">{{ aprendizado.aprendizado }}</p>
             </li>
         {% empty %}
