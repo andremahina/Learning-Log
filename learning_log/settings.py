@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Minhas configuracões
+LOGIN_URL = '/contas/login/'
 
 # Application definition
 
@@ -37,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Minhas aplicacoes
     'learning_logs',
+    'contas', 
 ]
 
 MIDDLEWARE = [

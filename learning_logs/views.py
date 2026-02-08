@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 from .models import Assunto, Aprendizado
 from .forms import AssuntoForm, AprendizadoForm
 
+@login_required
 def index(request):
     """View responsavel por retornar a pagina inicial"""
 

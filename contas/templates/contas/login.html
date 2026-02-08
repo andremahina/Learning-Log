@@ -1,0 +1,12 @@
+{% extends 'learning_logs/base.html' %}
+{% block conteudo %}
+    {% if form.errors %}
+        <p>Nome de usuario ou senha nao correspondem. Por favor tente novamente.</p>
+    {% endif %}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">log in</button>
+        <input type="hidden" name="next" value="{% url 'home' %}">
+    </form>
+{% endblock %}
