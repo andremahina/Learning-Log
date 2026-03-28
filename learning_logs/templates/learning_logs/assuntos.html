@@ -1,11 +1,13 @@
 {% extends 'learning_logs/base.html' %}
 {% block conteudo %}
-    <h2>Meus assuntos</h2>
-    <ul>
-        {% for assunto in assuntos %}
-            <li><a href="{% url 'assunto' assunto.id %}">{{ assunto }}</a></li>
-        {% empty %}
-            <li>Sem nenhum assunto no momento </li>
-        {% endfor %}
-    </ul>
+    <div class="assuntos">
+        <h2><a href="{% url 'assuntos' %}">Meus assuntos</a></h2>
+        <ul type="none">
+            {% for assunto in assuntos %}
+                <li><a href="{% url 'assunto' assunto.id %}">{{ assunto }}</a></li>
+            {% empty %}
+                <li>Sem nenhum assunto no momento </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock conteudo %}

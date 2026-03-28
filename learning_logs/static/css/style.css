@@ -1,0 +1,357 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --destaque: #3777c1;
+    --fundo: #ffffff;
+    --nav:#9FC1A3;
+    --texto: #9e9e9e;
+    --texto2: #d4d4d4;
+    --cta: #0072bd;
+}
+
+@font-face {
+    font-family: 'll_font';
+    src: url('roboto_normal.ttf');
+}
+
+html, body {
+    max-width: 1450px;
+    background-color: var(--fundo);
+    font-family: ll_font;
+    height: 100%;
+
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+/* Configuracao do header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: var(--destaque);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+header .logo a {
+    color: var(--texto2);
+    text-decoration: none;
+    font: bold 2em ll_font;
+}
+header .links {
+    display: flex;
+    gap: 30px;
+    background-color: #4000ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font: bolder 1em ll_font;
+}
+header .links a {
+    text-decoration: none;
+    color: var(--texto2);
+    font: bold 1em ll_font;
+}
+
+/*Configuracao do nav bar */
+nav {
+    display: flex;
+    justify-content: start;
+    gap: 5px;
+    padding: 5px 20px;
+    background-color: var(--nav);
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: #3777c1;
+    border-radius: 5px;
+    font: bolder 1em ll_font;
+}
+main {
+    padding: 20px;
+    flex: 1;
+}
+main .index .banner {
+    margin-bottom: 20px;
+}
+main .index p {
+    font: normal 1.5em ll_font;
+    color: rgb(142, 142, 142);
+}
+main .index .banner h1 {
+    background-color: #3777c1;
+    background-image: linear-gradient(to right, rgb(207, 207, 207),rgba(0, 0, 255, 0.362), rgb(207, 207, 207));
+    border: 4px solid rgba(73, 73, 83, 0.1);
+    font: bolder 5em ll_font;
+    padding: 100px 20px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+main h2 {
+    margin-bottom: 20px;
+}
+main .assuntos h2  a {
+    color: rgb(145, 145, 145);
+    text-decoration: none;
+}
+
+main .assuntos ul {
+    display: grid;
+    gap: 10px;
+}
+main .assuntos ul li {
+    text-decoration: none;
+    color: var(--texto);
+    background-color: #d4d4d4;
+    padding: 10px 40px;
+    border-radius: 5px;
+    transition: all ease-in-out 0.3s;
+}
+ main .assuntos li:hover{
+    transform: scale(1.01);
+    background-color: #3777c1;
+    color: #ffffff;
+}
+main .assuntos li a {
+    color: #5a5a5a;
+}
+main .assuntos li a:hover {
+    color: white;
+}
+
+main .novo_assunto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .novo_assunto h2 {
+    font: bolder 2.5em ll_font;
+    color: var(--texto);
+    box-shadow: 0.5 0.5 10px black;
+    max-width: 1050px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.401);
+    width: 100%;
+}
+main .novo_assunto form {
+    display: grid;
+    max-width: 1050px;
+    width: 100%;
+    gap: 20px;
+}
+main .novo_assunto form label {
+    font: bold 1.5em ll_font;
+    color: #0072bd;
+}
+main .novo_assunto form input {
+    padding: 15px;
+    font: bold 1em ll_font;
+    color: #eaeaea;
+    border: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.138);
+    border-radius: 8px;
+} 
+main .novo_assunto form input:focus {
+    outline-color: #3777c1;
+}
+main .novo_assunto form button {
+    padding: 5px;
+    outline: none;
+    background-color: rgb(96, 96, 96);
+    color: white;
+    font: bold 1.5em ll_font;
+    border-radius: 8px;
+}
+main .novo_assunto form button:hover {
+    background-color: black;
+    color: #099dff;
+}
+
+
+main .assunto {
+    overflow-x: auto;
+}
+main .assunto h2 > a {
+    color: var(--texto);
+}
+main .assunto h2 > a:hover {
+    color: #3777c1;
+}
+main .assunto .assuntoContainer {
+    display: grid;
+    gap: 30px;
+    padding: 10px;
+}
+main .assunto .assuntoContainer a {
+    color: white;
+    background-color: black;
+    width: fit-content;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: all ease-in-out 0.4s;
+}
+main .assunto .assuntoContainer a:hover {
+    background-color: #0072bd;
+    transform: scale(1.01);
+}
+main .assunto .assuntoContainer a span {
+    font: bolder 1em ll_font;
+    padding: 5px 10px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+main .assunto .assunto2 {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.185);
+}
+main .assunto .assunto2 aside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3777c1;
+    padding: 10px;
+    color: white;
+}
+main .assunto .assunto2 article {
+    height: 200px;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+}
+main .assunto .assunto2 aside a {
+    background-color: #099dff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: white;
+}
+
+main .novo_aprendizado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .novo_aprendizado h2 {
+    font: bolder 2.5em ll_font;
+    color: var(--texto);
+    box-shadow: 0.5 0.5 10px black;
+    max-width: 1050px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.401);
+    width: 100%;
+}
+main .novo_aprendizado form {
+    display: grid;
+    max-width: 1050px;
+    width: 100%;
+    gap: 20px;
+}
+main .novo_aprendizado form label {
+    font: bold 1.5em ll_font;
+    color: #0072bd;
+}
+main .novo_aprendizado form textarea {
+    padding: 15px;
+    font: bold 1em ll_font;
+    color: black;
+    border: none;
+    border: 1px solid black;
+    border-radius: 8px;
+} 
+main .novo_aprendizado form textarea:focus {
+    outline-color: #3777c1;
+}
+main .novo_aprendizado form button {
+    padding: 5px;
+    outline: none;
+    background-color: rgb(96, 96, 96);
+    color: white;
+    font: bold 1.5em ll_font;
+    border-radius: 8px;
+}
+main .novo_aprendizado form button:hover {
+    background-color: black;
+    color: #099dff;
+}
+
+main .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+main .logo img {
+    width: 200px;
+    margin: 0;
+}
+main .login .logo {
+    margin-bottom: 20px;
+}
+main .login form {
+    display: grid;
+    width: 100%;
+    max-width: 600px;
+    gap: 10px;
+}
+main .login form .campo {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+}
+main .login form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #999;
+    font-size: 16px;
+    border-radius: 15px;
+}
+main .login form label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: #777;
+    transition: all ease-in-out 0.3s;
+    pointer-events: none;
+}
+main .login input:focus + label, 
+main .login input:valid + label {
+    top: 0;
+    font-size: 12px;
+    color: #3777c1;
+}
+main .login input:focus {
+    outline-color: #3777c1;
+}
+main .login form button {
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: #3777c1;
+    color: #ffffff;
+    font: bold 1.2em ll_font;
+}
+
+footer {
+    display: grid;
+    background-color: rgb(74, 74, 74);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

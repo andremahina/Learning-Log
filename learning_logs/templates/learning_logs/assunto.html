@@ -1,21 +1,28 @@
 {% extends 'learning_logs/base.html' %}
 {% block conteudo %}
-    <h2> <a href="{% url 'assuntos' %}">Meus assuntos ></a>
-        <a href="{% url 'assunto' assunto.id %}">{{ assunto }}</a>
-    </h2>
-    <p>Aprendizados: </p>
-    <a href="{% url 'novo_aprendizado' assunto.id %}">Adicionar novo aprendizado</a>
-    <ul type="square" >
-        {% for aprendizado in aprendizados %}
-            <li>
-                <p>{{ aprendizado.data|date:'D M, Y H:i'}}</p>
-                <a href="{% url 'editar_aprendizado' aprendizado.id %}">editar aprendizado</a>
-                <p style="text-align: justify;">{{ aprendizado.aprendizado }}</p>
-            </li>
-        {% empty %}
-            <li>
-                Nenhum aprendizado relativo a este assunto foi adicionado no momento ☹️
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="assunto">
+        <h2> 
+            <a href="{% url 'assuntos' %}">Meus assuntos ></a>
+            <a href="{% url 'assunto' assunto.id %}">{{ assunto }}</a>
+        </h2>
+        <h2>Aprendizados</h2>
+        <div class="assuntoContainer">
+            <a href="{% url 'novo_aprendizado' assunto.id %}">novo aprendizado <span>+</span></a>
+            {% for aprendizado in aprendizados %}
+                <div class="assunto2">
+                    <aside>
+                        <p>{{ aprendizado.data|date:'d M, Y H:i'}}</p>
+                        <a href="{% url 'editar_aprendizado' aprendizado.id %}">editar aprendizado</a>
+                    </aside>
+                    <article>
+                        <p style="text-align: justify;">{{ aprendizado.aprendizado }}</p>
+                    </article>
+                </div>
+            {% empty %}
+                <li>
+                    Nenhum aprendizado relativo a este assunto foi adicionado no momento ☹️
+                </li>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

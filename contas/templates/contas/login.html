@@ -1,12 +1,29 @@
 {% extends 'learning_logs/base.html' %}
+{% load static %}
 {% block conteudo %}
-    {% if form.errors %}
-        <p>Nome de usuario ou senha nao correspondem. Por favor tente novamente.</p>
-    {% endif %}
-    <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">log in</button>
-        <input type="hidden" name="next" value="{% url 'home' %}">
-    </form>
+    <div class="login">
+        {% if form.errors %}
+            <p>Nome de usuario ou senha nao correspondem. Por favor tente novamente.</p>
+        {% endif %}
+        <div class="logo">
+            <img src="{% static 'imgs/logo2.png'%}" alt="logotipo learning_logs">
+        </div>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="campo">
+                <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+                <label for="id_username">Nome de usuario</label>
+                <span class="underline"></span>
+            </div>
+
+            <div class="campo">
+                <input type="password" name="password" autocomplete="current-password" required id="id_password">
+                <label for="id_password">Senha</label>
+                <span class="underline"></span>
+            </div>
+
+            <button type="submit">Entrar</button>
+            <input type="hidden" name="next" value="{% url 'home' %}">
+        </form>
+    </div>
 {% endblock %}

@@ -1,12 +1,16 @@
 {% extends 'learning_logs/base.html' %}
 {% block conteudo %}
-    <h2>{{ assunto }}</h2>
-    <div class="form">
-        <h3>Novo aprendizado</h3>
-        <form action="{% url 'novo_aprendizado' assunto.id %}" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Adicionar aprendizado</button>
-        </form>
+    <div class="novo_aprendizado">
+        <h3>{{ assunto }}</h3>
+        <h2>Novo aprendizado</h2>
+        <div class="form">
+            <form action="{% url 'novo_aprendizado' assunto.id %}" method="post">
+                {% csrf_token %}
+                <label for="id_aprendizado">Aprendizado:</label>
+                <textarea name="aprendizado" cols="400" rows="10" required id="id_aprendizado">
+                </textarea>
+                <button type="submit">Adicionar aprendizado</button>
+            </form>
+        </div>
     </div>
 {% endblock %}
